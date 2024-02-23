@@ -39,7 +39,6 @@
 - (instancetype)initWithAppGroup:(NSString *)appGroup source:(NSString *)source destination:(NSString *)destination config:(ChannelConfiguration *)config;
 - (void)info;
 + (instancetype)createChannelWithAppGroup:(NSString *)appGroup source:(NSString *)source destination:(NSString *)destination config:(ChannelConfiguration *)config;
-+ (instancetype)createChannelWithAppGroup:(NSString *)appGroup source:(NSString *)source destination:(NSString *)destination;
 - (void)sendWithMessage:(NSString *)message expiry:(NSInteger)expiry;
 - (NSString *)readWithError:(NSError **)error;
 - (void)commit;

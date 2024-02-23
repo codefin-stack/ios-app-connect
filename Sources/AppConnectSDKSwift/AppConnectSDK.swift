@@ -51,12 +51,12 @@ public class AppConnectSDK {
     
     public func read() throws -> String {
         print("[AppConnectSDK:read] called")
-        var otherKey: String = getChannelId(source: destination, destination: source, type: MessageType.OUT)
+        let otherKey: String = getChannelId(source: destination, destination: source, type: MessageType.OUT)
         print("[AppConnectSDK:send] otherKey: ", otherKey)
-        var selfKey: String = getChannelId(source: source, destination: destination, type: MessageType.IN)
+        let selfKey: String = getChannelId(source: source, destination: destination, type: MessageType.IN)
         print("[AppConnectSDK:send] selfKey: ", selfKey)
         
-        var incomingMessage = AppGroupConnector.read(
+        let incomingMessage = AppGroupConnector.read(
             appGroup: appGroup,
             key: otherKey
         )
@@ -67,7 +67,7 @@ public class AppConnectSDK {
         
         print("[AppConnectSDK:send] incomingMessage: ", incomingMessage?.message ?? "")
         
-        var readedMessage = AppGroupConnector.read(
+        let readedMessage = AppGroupConnector.read(
             appGroup: appGroup,
             key: selfKey
         )
